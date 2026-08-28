@@ -1,4 +1,4 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 
 const PROFILE = {
   name: "성명기",
@@ -7,9 +7,9 @@ const PROFILE = {
 };
 
 const LINKS = [
-  { label: "💻 GitHub", href: "https://github.com/smg004" },
-  { label: "📲 Instagram", href: "https://www.instagram.com/me.0_.91" },
-  { label: "📩 Email", href: "mailto:qazplm7085@gmail.com" },
+  { id: "github", label: "💻 GitHub", href: "https://github.com/smg004" },
+  { id: "instagram", label: "📲 Instagram", href: "https://www.instagram.com/me.0_.91" },
+  { id: "email", label: "📩 Email", href: "mailto:qazplm7085@gmail.com" },
 ];
 
 export default function Home() {
@@ -42,11 +42,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-4">
-          {LINKS.map((link) => (
-            <LinkCard key={link.label} href={link.href} label={link.label} />
-          ))}
-        </div>
+        <LinkList links={LINKS} />
       </main>
     </div>
   );
